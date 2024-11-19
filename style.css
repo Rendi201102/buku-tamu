@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Untuk layar besar (desktop) */
+body {
+    font-size: 16px;
+  }
+  
+  /* Untuk layar tablet */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+  }
+  
+  /* Untuk layar smartphone */
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
+  
+    

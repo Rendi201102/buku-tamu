@@ -3,71 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buku Tamu</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Form Buku Tamu</title>
+  <link rel="stylesheet" href="form-styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <h1>Buku Tamu</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Dashboard</a></li>
-          <li><a href="#tamu">Daftar Tamu</a></li>
-          <li><a href="#settings">Pengaturan</a></li>
-          <li><button class="logout">Logout</button></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="home">
-      <div class="welcome">
-        <h2>Selamat Datang, Admin</h2>
-        <p>Kelola data tamu Anda dengan mudah melalui platform ini.</p>
+  <div class="form-container">
+    <h1>Buku Tamu</h1>
+    <p>Silakan isi data berikut untuk keperluan kunjungan Anda.</p>
+    <form>
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
       </div>
-      <div class="stats">
-        <div class="card">
-          <h3>Total Tamu</h3>
-          <p>120</p>
-        </div>
-        <div class="card">
-          <h3>Tamu Hari Ini</h3>
-          <p>15</p>
-        </div>
+      <div class="form-group">
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
       </div>
-    </section>
-
-    <section id="tamu">
-      <h2>Daftar Tamu</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Tamu</th>
-            <th>No. Telp</th>
-            <th>Instansi</th>
-            <th>Keperluan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>08123456789</td>
-            <td>Perusahaan X</td>
-            <td>Meeting</td>
-          </tr>
-          <!-- Tambahkan data lainnya -->
-        </tbody>
-      </table>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Buku Tamu. All rights reserved.</p>
-  </footer>
+      <div class="form-group">
+        <label for="instansi">Instansi</label>
+        <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
+      </div>
+      <div class="form-group">
+        <label for="keperluan">Keperluan</label>
+        <textarea id="keperluan" name="keperluan" rows="4" placeholder="Tuliskan keperluan kunjungan" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
 </body>
 </html>

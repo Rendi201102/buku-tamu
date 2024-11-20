@@ -101,3 +101,54 @@ form .form-group textarea {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Container form */
+.container {
+  display: flex;
+  flex-direction: column; /* Elemen dalam satu kolom */
+  max-width: 400px; /* Lebar maksimal untuk tampilan desktop */
+  margin: 20px auto; /* Tengah layar */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field dan tombol */
+input, button {
+  width: 100%; /* Sesuaikan lebar dengan container */
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Gambar */
+.image-container img {
+  max-width: 100%; /* Agar gambar tidak keluar dari container */
+  height: auto;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

@@ -87,3 +87,17 @@ form .form-group textarea {
   background-color: #0056b3;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
+
+/* Tambahkan gaya untuk gambar */
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  width: 150px; /* Ubah ukuran sesuai kebutuhan */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

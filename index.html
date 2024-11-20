@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Buku Tamu</title>
+  <link rel="stylesheet" href="form-styles.css?version=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="form-container">
-    <img src="tis.png" alt="Deskripsi gambar">
-    <h1>Buku Tamu</h1>
-    <p>Silakan isi data berikut untuk keperluan kunjungan Anda.</p>
+  <div class="container">
+    <header>
+      <h1>Buku Tamu Digital</h1>
+      <p>Selamat datang! Silakan isi form berikut.</p>
+    </header>
     <form>
       <div class="form-group">
         <label for="nama">Nama Lengkap</label>
-        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
       </div>
       <div class="form-group">
-        <label for="telepon">Nomor Telepon</label>
-        <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+        <label for="no-telp">Nomor Telepon</label>
+        <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
       </div>
       <div class="form-group">
         <label for="instansi">Instansi</label>
@@ -27,9 +28,9 @@
       </div>
       <div class="form-group">
         <label for="keperluan">Keperluan</label>
-        <textarea id="keperluan" name="keperluan" rows="4" placeholder="Tuliskan keperluan kunjungan" required></textarea>
+        <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
       </div>
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="btn-submit">Kirim</button>
     </form>
   </div>
 </body>

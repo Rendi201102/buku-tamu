@@ -1,110 +1,145 @@
+/* Form Stylesheet */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #f8fbff, #d6e4f0);
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
 .container {
-  width: 90%;
-  max-width: 400px;
-  padding: 20px;
-  background: white;
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
 }
 
-.header {
-  background-color: #ff6600;
-  color: white;
-  padding: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 20px;
+header h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #555;
   margin-bottom: 20px;
 }
 
-.logo {
-  margin: 10px 0 20px;
-}
-
-.logo img {
-  max-width: 120px;
-  height: auto;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-group {
-  width: 100%;
-  text-align: left;
+form .form-group {
   margin-bottom: 15px;
-  position: relative;
+  text-align: left;
 }
 
-.form-group label {
+form .form-group label {
   display: block;
   font-size: 14px;
   color: #444;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 
-input[type="text"],
-input[type="tel"],
-textarea {
+form .form-group input,
+form .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #a5e582;
-  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #555;
-  font-size: 14px;
-}
-
-textarea {
+form .form-group textarea {
   resize: none;
-  height: 80px;
 }
 
-.button {
-  background-color: #ff6600;
-  color: white;
-  padding: 12px 20px;
+.btn-submit {
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 20px;
+  padding: 12px 20px;
   font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  margin-top: 15px;
   font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-.button:hover {
-  background-color: #e65c00;
+.btn-submit:hover {
+  background-color: #beca7a;
+  box-shadow: 0 4px 8px rgba(25, 95, 54, 0.3);
 }
 
-/* Menyesuaikan tampilan form agar lebih rapi */
-@media (max-width: 768px) {
-  .container {
-      padding: 15px;
-  }
+/* Tambahkan gaya untuk gambar */
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  width: 150px; /* Ubah ukuran sesuai kebutuhan */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container form */
+.container {
+  display: flex;
+  flex-direction: column; /* Elemen dalam satu kolom */
+  max-width: 400px; /* Lebar maksimal untuk tampilan desktop */
+  margin: 20px auto; /* Tengah layar */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field dan tombol */
+input, button {
+  width: 100%; /* Sesuaikan lebar dengan container */
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #d9ff00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #51926a;
+}
+
+/* Gambar */
+.image-container img {
+  max-width: 100%; /* Agar gambar tidak keluar dari container */
+  height: auto;
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {

@@ -1,73 +1,53 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Konfirmasi Buku Tamu</title>
   <link rel="stylesheet" href="form-styles.css?version=1.0">
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-    .confirmation-container {
-      text-align: center;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 90%;
-      max-width: 400px;
-    }
-    .confirmation-container img {
-      width: 100px;
-      margin-bottom: 10px;
-    }
-    .confirmation-message {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .back-button {
-      display: block;
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
 </head>
 <body>
-
-  <div class="confirmation-container">
-    <img src="tis.png" alt="Logo TIS">
-    <h2>Terima Kasih!</h2>
-    <p>Data Anda telah berhasil dikirim.</p>
-    <div class="confirmation-message">
-      <p><strong>Nama:</strong> <span id="nama"></span></p>
-      <p><strong>Nomor Telepon:</strong> <span id="noTelp"></span></p>
-      <p><strong>Instansi:</strong> <span id="instansi"></span></p>
-      <p><strong>Keperluan:</strong> <span id="keperluan"></span></p>
+  <div class="container">
+    <header>
+      <h1>Konfirmasi Buku Tamu</h1>
+      <p>Berikut adalah data yang telah Anda isi:</p>
+    </header>
+    
+    <div class="form-group">
+      <label>Nama Lengkap:</label>
+      <p id="nama"></p>
     </div>
-    <a href="index.html" class="back-button">Kembali ke Form</a>
+    <div class="form-group">
+      <label>Nomor Telepon:</label>
+      <p id="no-telp"></p>
+    </div>
+    <div class="form-group">
+      <label>Instansi:</label>
+      <p id="instansi"></p>
+    </div>
+    <div class="form-group">
+      <label>Keperluan:</label>
+      <p id="keperluan"></p>
+    </div>
+
+    <button onclick="kembali()">Kembali</button>
   </div>
 
   <script>
-    // Ambil data dari localStorage dan tampilkan
-    document.getElementById("nama").innerText = localStorage.getItem("nama") || "Tidak tersedia";
-    document.getElementById("noTelp").innerText = localStorage.getItem("no-telp") || "Tidak tersedia";
-    document.getElementById("instansi").innerText = localStorage.getItem("instansi") || "Tidak tersedia";
-    document.getElementById("keperluan").innerText = localStorage.getItem("keperluan") || "Tidak tersedia";
-  </script>
+    // Fungsi untuk mengambil data dari localStorage dan menampilkannya
+    function loadData() {
+      document.getElementById("nama").innerText = localStorage.getItem("nama") || "Tidak tersedia";
+      document.getElementById("no-telp").innerText = localStorage.getItem("no-telp") || "Tidak tersedia";
+      document.getElementById("instansi").innerText = localStorage.getItem("instansi") || "Tidak tersedia";
+      document.getElementById("keperluan").innerText = localStorage.getItem("keperluan") || "Tidak tersedia";
+    }
 
+    function kembali() {
+      window.location.href = "index.html"; // Ganti dengan halaman awal form jika berbeda
+    }
+
+    window.onload = loadData;
+  </script>
 </body>
 </html>

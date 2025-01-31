@@ -53,8 +53,8 @@ form .form-group input,
 form .form-group textarea {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
-  border: 1px solid rgb(109, 175, 129);
+  background-color: #96d47d;
+  border: 1px solid rgb(28, 85, 45);
   border-radius: 5px;
   font-size: 14px;
   transition: all 0.3s ease;

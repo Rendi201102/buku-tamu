@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="form-styles.css?version=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event){
+      event.preventDefault(); // Mencegah form dikirim secara default
+
+      // Ambil data dari input
+      let nama = document.getElementById("nama").value;
+      let noTelp = document.getElementById("no-telp").value;
+      let instansi = document.getElementById("instansi").value;
+      let keperluan = document.getElementById("keperluan").value;
+
+      // Simpan data ke localStorage
+      localStorage.setItem("nama", nama);
+      localStorage.setItem("no-telp", noTelp);
+      localStorage.setItem("instansi", instansi);
+      localStorage.setItem("keperluan", keperluan);
+
+      // Redirect ke halaman konfirmasi
+      window.location.href = "konfirmasi.html";
+  });
+</script>
 <body>
   <div class="container">
     <!-- Tambahkan Gambar -->

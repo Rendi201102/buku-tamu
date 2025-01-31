@@ -84,8 +84,8 @@ form .form-group textarea {
 }
 
 .btn-submit:hover {
-  background-color: #0056b3;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  background-color: #beca7a;
+  box-shadow: 0 4px 8px rgba(25, 95, 54, 0.3);
 }
 
 /* Tambahkan gaya untuk gambar */
@@ -125,14 +125,14 @@ input, button {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #d9ff00;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #51926a;
 }
 
 /* Gambar */

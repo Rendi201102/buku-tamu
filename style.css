@@ -2,12 +2,16 @@ body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
   width: 90%;
   max-width: 400px;
-  margin: auto;
   padding: 20px;
   background: white;
   border-radius: 10px;
@@ -17,14 +21,20 @@ body {
 .header {
   background-color: #ff6600;
   color: white;
-  padding: 10px;
+  padding: 12px;
   font-size: 20px;
+  font-weight: bold;
   border-radius: 20px;
   margin-bottom: 20px;
 }
 
 .logo {
-  margin: 20px 0;
+  margin: 10px 0 20px;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
 }
 
 form {
@@ -33,32 +43,43 @@ form {
   align-items: center;
 }
 
-form .form-group {
+.form-group {
   width: 100%;
   text-align: left;
   margin-bottom: 15px;
+  position: relative;
 }
 
-form .form-group label {
+.form-group label {
   display: block;
   font-size: 14px;
   color: #444;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
-input[type="text"], input[type="tel"], textarea {
+input[type="text"],
+input[type="tel"],
+textarea {
   width: 100%;
-  padding: 10px;
-  border: none;
+  padding: 12px;
+  border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #a5e582;
-  text-align: center;
+  text-align: left;
+  font-size: 14px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #555;
   font-size: 14px;
 }
 
 textarea {
   resize: none;
-  height: 60px;
+  height: 80px;
 }
 
 .button {
@@ -67,11 +88,12 @@ textarea {
   padding: 12px 20px;
   border: none;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   width: 100%;
   text-align: center;
   margin-top: 15px;
+  font-weight: bold;
 }
 
 .button:hover {
@@ -81,7 +103,7 @@ textarea {
 /* Menyesuaikan tampilan form agar lebih rapi */
 @media (max-width: 768px) {
   .container {
-      padding: 10px;
+      padding: 15px;
   }
 }
 

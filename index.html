@@ -7,26 +7,6 @@
   <link rel="stylesheet" href="form-styles.css?version=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-  document.querySelector("form").addEventListener("submit", function(event){
-      event.preventDefault(); // Mencegah form dikirim secara default
-
-      // Ambil data dari input
-      let nama = document.getElementById("nama").value;
-      let noTelp = document.getElementById("no-telp").value;
-      let instansi = document.getElementById("instansi").value;
-      let keperluan = document.getElementById("keperluan").value;
-
-      // Simpan data ke localStorage
-      localStorage.setItem("nama", nama);
-      localStorage.setItem("no-telp", noTelp);
-      localStorage.setItem("instansi", instansi);
-      localStorage.setItem("keperluan", keperluan);
-
-      // Redirect ke halaman konfirmasi
-      window.location.href = "konfirmasi.html";
-  });
-</script>
 <body>
   <div class="container">
     <!-- Tambahkan Gambar -->
@@ -37,29 +17,49 @@
       <h1>Buku Tamu Digital</h1>
       <p>Selamat datang! Silakan isi form berikut.</p>
     </header>
-    <form>
-      <form action="konfirmasi.html" method="get">
-        <div class="form-group">
-          <label for="nama">Nama Lengkap</label>
-          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
-        </div>
-        <div class="form-group">
-          <label for="no-telp">Nomor Telepon</label>
-          <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
-        </div>
-        <div class="form-group">
-          <label for="instansi">Instansi</label>
-          <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
-        </div>
-        <div class="form-group">
-          <label for="keperluan">Keperluan</label>
-          <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
-        </div>
+    
+    <form id="bukuTamuForm">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
       </div>
-      <a href="konfirmasi.html" class="button">Kirim</a>
-    </div>
-      </form>      
+      <div class="form-group">
+        <label for="no-telp">Nomor Telepon</label>
+        <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
+      </div>
+      <div class="form-group">
+        <label for="instansi">Instansi</label>
+        <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
+      </div>
+      <div class="form-group">
+        <label for="keperluan">Keperluan</label>
+        <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Kirim</button>
     </form>
   </div>
+
+  <script>
+    window.onload = function() {
+      document.getElementById("bukuTamuForm").addEventListener("submit", function(event){
+          event.preventDefault(); // Mencegah form dikirim secara default
+
+          // Ambil data dari input
+          let nama = document.getElementById("nama").value;
+          let noTelp = document.getElementById("no-telp").value;
+          let instansi = document.getElementById("instansi").value;
+          let keperluan = document.getElementById("keperluan").value;
+
+          // Simpan data ke localStorage
+          localStorage.setItem("nama", nama);
+          localStorage.setItem("no-telp", noTelp);
+          localStorage.setItem("instansi", instansi);
+          localStorage.setItem("keperluan", keperluan);
+
+          // Redirect ke halaman konfirmasi
+          window.location.href = "konfirmasi.html";
+      });
+    };
+  </script>
 </body>
 </html>

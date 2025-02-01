@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient Warna */
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,12 +27,12 @@ body {
 }
 
 .logo {
-  max-width: 80px;
-  margin: 15px 0;
+  max-width: 100px; /* Ukuran logo diperkecil */
+  margin: 10px auto;
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 8px 0;
   border: 1px solid #ddd;

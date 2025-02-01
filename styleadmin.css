@@ -48,4 +48,47 @@ body {
     display: block;
     margin: 10px 0;
   }
+
+  /* Tambahkan gaya untuk gambar */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
   
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    width: 150px; /* Ubah ukuran sesuai kebutuhan */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Container form */
+  .container {
+    display: flex;
+    flex-direction: column; /* Elemen dalam satu kolom */
+    max-width: 400px; /* Lebar maksimal untuk tampilan desktop */
+    margin: 20px auto; /* Tengah layar */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Gambar */
+.image-container img {
+    max-width: 100%; /* Agar gambar tidak keluar dari container */
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }    

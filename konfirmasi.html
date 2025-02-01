@@ -50,24 +50,12 @@
 
   <div class="confirmation-container">
     <img src="tis.png" alt="Logo TIS">
-    <h2>Terima Kasih!</h2>
-    <p>Data Anda telah berhasil dikirim.</p>
     <div class="confirmation-message">
-      <p><strong>Nama:</strong> <span id="nama"></span></p>
-      <p><strong>Nomor Telepon:</strong> <span id="noTelp"></span></p>
-      <p><strong>Instansi:</strong> <span id="instansi"></span></p>
-      <p><strong>Keperluan:</strong> <span id="keperluan"></span></p>
+      <p><strong>Data Anda telah berhasil dikirim.</strong> <span id="nama"></span></p>
+      <p><strong>Terimakasi Telah Mengunjungi</strong> <span id="noTelp"></span></p>
+      <p><strong>PT. Trans Indonesia Superkoridor</strong> <span id="instansi"></span></p>
     </div>
     <a href="index.html" class="back-button">Kembali ke Form</a>
   </div>
-
-  <script>
-    // Ambil data dari localStorage dan tampilkan
-    document.getElementById("nama").innerText = localStorage.getItem("nama") || "Tidak tersedia";
-    document.getElementById("noTelp").innerText = localStorage.getItem("no-telp") || "Tidak tersedia";
-    document.getElementById("instansi").innerText = localStorage.getItem("instansi") || "Tidak tersedia";
-    document.getElementById("keperluan").innerText = localStorage.getItem("keperluan") || "Tidak tersedia";
-  </script>
-
 </body>
 </html>

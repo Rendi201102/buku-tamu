@@ -23,6 +23,7 @@ body {
   .login-container h2 {
     background-color: rgb(136, 219, 119);
     padding: 10px;
+    font-size: 15px;
     border-radius: 5px;
     color: white;
   }

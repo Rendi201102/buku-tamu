@@ -1,49 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
-    <link rel="stylesheet" href="styleadmin.css">
-</head>
-<body>
-    <div class="login-container">
-        <h2>ADMIN</h2>
-        <img src="tis.png" alt="Logo Supercorridor">
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="username" required>
-            <input type="password" id="password" placeholder="password" required>
-            <label>
-                <input type="checkbox" id="showPassword"> Tampilkan Password
-            </label>
-            <button type="submit">Login</button>
-        </form>
-        <p id="errorMessage" style="color: red; display: none;">Username atau password salah!</p>
-    </div>
+<div class="container">
+    <div class="header">ADMIN</div>
+    <img src="logo.png" class="logo" alt="Logo">
+    <input type="text" placeholder="username">
+    <input type="password" id="password" placeholder="password">
     
-    <script>
-        document.getElementById("showPassword").addEventListener("change", function() {
-            let passwordField = document.getElementById("password");
-            passwordField.type = this.checked ? "text" : "password";
-        });
+    <div class="show-password-container">
+        <input type="checkbox" id="show-password">
+        <label for="show-password">Tampilkan Password</label>
+    </div>
 
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-
-            // Simulasi login (gantilah dengan validasi dari database)
-            let validUsername = "admin";
-            let validPassword = "12345";
-
-            if (username === validUsername && password === validPassword) {
-                localStorage.setItem("isLoggedIn", "true");
-                window.location.href = "dasboard.html"; // Arahkan ke dashboard setelah login
-            } else {
-                document.getElementById("errorMessage").style.display = "block";
-            }
-        });
-    </script>
-</body>
-</html>
+    <button>Login</button>
+</div>

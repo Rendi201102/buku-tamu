@@ -24,10 +24,11 @@ body {
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .logo {
-  max-width: 100px; /* Ukuran logo diperkecil */
+  max-width: 80px; /* Ukuran logo diperkecil */
   margin: 10px auto;
 }
 
@@ -43,13 +44,13 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   margin: 10px 0;
 }
 
 #show-password {
   width: 18px;
   height: 18px;
-  margin-right: 8px;
 }
 
 button {

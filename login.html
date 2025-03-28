@@ -20,7 +20,7 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 400px; /* Memperbesar container */
+            width: 380px; /* Sesuaikan ukuran container */
         }
         .header {
             background-color: orange;
@@ -29,17 +29,17 @@
             font-weight: bold;
             padding: 15px;
             border-radius: 5px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .image-container img {
-            width: 140px; /* Perbesar logo */
+            width: 120px; /* Sesuaikan ukuran logo */
             height: auto;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         input {
-            width: calc(100% - 20px); /* Sesuaikan ukuran agar tidak melebihi kotak */
+            width: calc(100% - 20px); /* Sesuaikan ukuran agar tetap dalam container */
             padding: 12px;
-            margin: 10px 0;
+            margin: 8px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 16px;
@@ -50,14 +50,14 @@
         .checkbox-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between; /* Supaya label ada di kiri dan checkbox di kanan */
             font-size: 14px;
             margin-top: 10px;
             padding: 5px;
         }
         .checkbox-container input {
             width: auto;
-            margin-right: 5px;
+            margin-left: 5px;
         }
         button {
             background-color: orange;
@@ -68,7 +68,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         button:hover {
             background-color: darkorange;
@@ -84,8 +84,8 @@
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password" id="password">
         <div class="checkbox-container">
-            <input type="checkbox" onclick="togglePassword()">
-            <label>Tampilkan Password</label>
+            <label for="show-password">Tampilkan Password</label>
+            <input type="checkbox" id="show-password" onclick="togglePassword()">
         </div>
         <button>Login</button>
     </div>
@@ -93,11 +93,7 @@
     <script>
         function togglePassword() {
             var passwordField = document.getElementById("password");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-            } else {
-                passwordField.type = "password";
-            }
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
         }
     </script>
 </body>

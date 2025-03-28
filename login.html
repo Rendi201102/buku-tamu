@@ -3,22 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        .header {
+            background-color: orange;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .image-container img {
+            width: 80px; /* Ubah ukuran logo */
+            height: auto;
+            margin: 10px 0;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
+        }
+        .checkbox-container input {
+            width: auto;
+            margin-right: 5px;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">ADMIN</div>
-        <img src="tis.png" class="logo" alt="Logo">
-        <input type="text" placeholder="username">
-        <input type="password" id="password" placeholder="password">
-        
-        <div class="show-password-container">
-            <input type="checkbox" id="show-password">
-            <label for="show-password">Tampilkan Password</label>
+        <div class="image-container">
+            <img src="tis.png" alt="Logo TIS">
         </div>
-
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password" id="password">
+        <div class="checkbox-container">
+            <input type="checkbox" onclick="togglePassword()">
+            <label>Tampilkan Password</label>
+        </div>
         <button>Login</button>
     </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

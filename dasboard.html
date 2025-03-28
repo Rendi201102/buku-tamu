@@ -5,84 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
             display: flex;
-            height: 100vh;
-            background-color: #f5f5f5;
         }
-        /* Sidebar */
         .sidebar {
-            width: 250px;
-            background: orange;
-            color: white;
+            width: 200px;
+            background: white;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: 100vh;
         }
-        .sidebar h2 {
-            text-align: center;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .sidebar a {
-            text-decoration: none;
-            color: white;
-            padding: 10px;
+        .sidebar img {
+            width: 80px;
             display: block;
-            width: 100%;
-            margin-bottom: 10px;
+            margin: 0 auto;
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            color: white;
+            background: #2CA4D4;
             border-radius: 5px;
+            text-align: center;
         }
-        .sidebar a:hover {
-            background: darkorange;
-        }
-        /* Konten Utama */
-        .main-content {
-            flex: 1;
+        .menu a:nth-child(2) { background: #4CAF50; }
+        .menu a:nth-child(3) { background: #4CAF50; }
+        
+        .content {
+            flex-grow: 1;
             padding: 20px;
+            text-align: center;
+            background: white;
         }
         .header {
-            background: white;
+            background: orange;
+            color: white;
             padding: 15px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            border-radius: 5px;
         }
-        .content {
-            margin-top: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        .logout {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: orange;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .stats {
+            margin-top: 40px;
+        }
+        .stats div {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 50%;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-
-    <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Admin Panel</h2>
-        <a href="#">🏠 Beranda</a>
-        <a href="#">👤 Data Pengguna</a>
-        <a href="#">📊 Statistik</a>
-        <a href="index.html">🚪 Logout</a>
-    </div>
-
-    <!-- Konten Utama -->
-    <div class="main-content">
-        <div class="header">Dashboard Admin</div>
-        <div class="content">
-            <h3>Selamat Datang, Admin!</h3>
-            <p>Ini adalah dashboard utama Anda.</p>
+        <img src="logo.png" alt="Logo">
+        <div class="menu">
+            <a href="#">Dashboard</a>
+            <a href="#">Daftar Tamu</a>
+            <a href="#">Pengaturan</a>
         </div>
     </div>
-
+    <div class="content">
+        <button class="logout">Log Out</button>
+        <div class="header">DASHBOARD ADMIN</div>
+        <div class="stats">
+            <div>Total Tamu</div>
+            <div>Tamu Hari Ini</div>
+        </div>
+    </div>
 </body>
 </html>

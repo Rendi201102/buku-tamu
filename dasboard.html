@@ -3,20 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title>
+    <title>Login Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
+        }
+        .checkbox-container input {
+            width: auto;
+            margin-right: 5px;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkorange;
+        }
+    </style>
 </head>
 <body>
-    <h1>Selamat Datang di Dashboard Admin</h1>
-    <button onclick="logout()">Logout</button>
+    <div class="container">
+        <h2>ADMIN</h2>
+        <img src="logo.png" alt="Logo" class="logo">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password" id="password">
+        <div class="checkbox-container">
+            <input type="checkbox" onclick="togglePassword()">
+            <label>Tampilkan Password</label>
+        </div>
+        <button>Login</button>
+    </div>
 
     <script>
-        if (localStorage.getItem("isLoggedIn") !== "true") {
-            window.location.href = "login.html";
-        }
-
-        function logout() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
         }
     </script>
 </body>

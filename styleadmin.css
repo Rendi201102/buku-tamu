@@ -1,69 +1,63 @@
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #eef5ff;
   margin: 0;
 }
 
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
   width: 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .header {
-  background: #4CAF50;
+  background-color: #ffa500;
   color: white;
-  padding: 15px;
-  font-size: 20px;
   font-weight: bold;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  max-width: 80px; /* Ukuran logo diperkecil */
+  width: 120px;
   margin: 10px auto;
+  display: block;
 }
 
 input {
-  width: 90%;
+  width: calc(100% - 20px);
   padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .show-password-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
   margin: 10px 0;
 }
 
-#show-password {
-  width: 18px;
-  height: 18px;
+.show-password-container input {
+  width: auto;
+  margin-right: 10px;
 }
 
 button {
   width: 100%;
+  background: yellow;
+  color: black;
   padding: 10px;
-  background: #ff9800;
-  color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-}
-
-button:hover {
-  background: #e68900;
 }

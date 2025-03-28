@@ -29,9 +29,9 @@
         <img src="tis.png" alt="Logo Perusahaan">
         <h2>Admin Panel</h2>
         <ul class="menu">
-            <li class="active"><i class="fas fa-home"></i> Dashboard</li>
-            <li><i class="fas fa-users"></i> Daftar Tamu</li>
-            <li><i class="fas fa-cog"></i> Pengaturan</li>
+            <li id="menu-dashboard" class="active"><i class="fas fa-home"></i> Dashboard</li>
+            <li id="menu-daftar-tamu"><i class="fas fa-users"></i> Daftar Tamu</li>
+            <li id="menu-pengaturan"><i class="fas fa-cog"></i> Pengaturan</li>
         </ul>
     </div>
     <div class="content">
@@ -39,24 +39,38 @@
             <h2>Dashboard Admin</h2>
             <button>Log Out</button>
         </div>
-        <div class="cards">
-            <div class="card">Total Tamu: 100</div>
-            <div class="card">Tamu Hari Ini: 10</div>
+        
+        <div id="page-dashboard">
+            <div class="cards">
+                <div class="card">Total Tamu: 100</div>
+                <div class="card">Tamu Hari Ini: 10</div>
+            </div>
+            <div class="cards">
+                <div class="card chart-container">
+                    <canvas id="guestChart"></canvas>
+                </div>
+                <div class="card">
+                    <h3>Log Aktivitas</h3>
+                    <ul>
+                        <li>10:00 - Tamu John Doe check-in</li>
+                        <li>10:30 - Tamu Jane Smith check-in</li>
+                        <li>11:00 - Anomali terdeteksi!</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="cards">
-            <div class="card chart-container">
-                <canvas id="guestChart"></canvas>
-            </div>
-            <div class="card">
-                <h3>Log Aktivitas</h3>
-                <ul>
-                    <li>10:00 - Tamu John Doe check-in</li>
-                    <li>10:30 - Tamu Jane Smith check-in</li>
-                    <li>11:00 - Anomali terdeteksi!</li>
-                </ul>
-            </div>
+
+        <div id="page-daftar-tamu" style="display: none;">
+            <h2>Daftar Tamu</h2>
+            <p>Ini halaman daftar tamu.</p>
+        </div>
+
+        <div id="page-pengaturan" style="display: none;">
+            <h2>Pengaturan</h2>
+            <p>Ini halaman pengaturan.</p>
         </div>
     </div>
+
     <script>
         const ctx = document.getElementById('guestChart').getContext('2d');
         new Chart(ctx, {
@@ -72,6 +86,22 @@
                 }]
             },
             options: { responsive: true }
+        });
+
+        const pages = {
+            "menu-dashboard": "page-dashboard",
+            "menu-daftar-tamu": "page-daftar-tamu",
+            "menu-pengaturan": "page-pengaturan"
+        };
+
+        document.querySelectorAll(".menu li").forEach(menu => {
+            menu.addEventListener("click", function () {
+                document.querySelector(".menu .active")?.classList.remove("active");
+                this.classList.add("active");
+
+                Object.values(pages).forEach(page => document.getElementById(page).style.display = "none");
+                document.getElementById(pages[this.id]).style.display = "block";
+            });
         });
     </script>
 </body>

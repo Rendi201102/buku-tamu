@@ -5,48 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Tamu Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1F2A40, #FFA500);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            width: 400px;
+            text-align: center;
+        }
+        .form-container h2 {
+            background: #FFA500;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .form-container img {
+            width: 100px;
+            margin: 15px 0;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            padding-left: 40px;
+        }
+        .input-group textarea {
+            resize: none;
+            height: 80px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+            font-size: 18px;
+        }
+        .btn {
+            width: 100%;
+            background: linear-gradient(90deg, #FFA500, #FF7800);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #FF7800, #FFA500);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div class="form-container">
-        <img src="tis.png" alt="Logo Perusahaan" class="logo">
         <h2>BUKU TAMU</h2>
-        <form id="bukuTamuForm">
+        <img src="tis.png" alt="Logo Perusahaan">
+        
+        <form id="guestBookForm">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="name" placeholder="Nama Lengkap" required>
             </div>
+            
             <div class="input-group">
                 <i class="fas fa-phone"></i>
-                <input type="tel" id="no-telp" name="no-telp" placeholder="Nomor Telepon" required>
+                <input type="tel" id="phone" placeholder="Nomor Telepon" required>
             </div>
+            
             <div class="input-group">
                 <i class="fas fa-building"></i>
-                <input type="text" id="instansi" name="instansi" placeholder="Instansi" required>
+                <input type="text" id="company" placeholder="Instansi" required>
             </div>
+            
             <div class="input-group">
                 <i class="fas fa-edit"></i>
-                <textarea id="keperluan" name="keperluan" placeholder="Keperluan Anda" rows="3" required></textarea>
+                <textarea id="purpose" placeholder="Keperluan Anda" required></textarea>
             </div>
+
             <button type="submit" class="btn">Kirim</button>
         </form>
     </div>
 
     <script>
-        document.getElementById("bukuTamuForm").addEventListener("submit", function(event){
-            event.preventDefault();
-
-            let nama = document.getElementById("nama").value;
-            let noTelp = document.getElementById("no-telp").value;
-            let instansi = document.getElementById("instansi").value;
-            let keperluan = document.getElementById("keperluan").value;
-
-            localStorage.setItem("nama", nama);
-            localStorage.setItem("no-telp", noTelp);
-            localStorage.setItem("instansi", instansi);
-            localStorage.setItem("keperluan", keperluan);
-
-            alert("Data berhasil disimpan!");
+        document.getElementById("guestBookForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah refresh halaman
+            window.location.href = "konfirmasi.html"; // Redirect ke halaman konfirmasi
         });
     </script>
 </body>

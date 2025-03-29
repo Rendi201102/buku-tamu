@@ -4,35 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Tamu Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <div class="header">
-                <h2>Buku Tamu Digital</h2>
-                <p>Silakan isi form berikut.</p>
+    <div class="form-container">
+        <h2>BUKU TAMU</h2>
+        <img src="tis.png" alt="Logo Perusahaan">
+        <form id="bukuTamuForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
             </div>
-            <form id="bukuTamuForm">
-                <div class="input-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
-                </div>
-                <div class="input-group">
-                    <label for="no-telp">Nomor Telepon</label>
-                    <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
-                </div>
-                <div class="input-group">
-                    <label for="instansi">Instansi</label>
-                    <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
-                </div>
-                <div class="input-group">
-                    <label for="keperluan">Keperluan</label>
-                    <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Kirim</button>
-            </form>
-        </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="no-telp" name="no-telp" placeholder="Nomor Telepon" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-building"></i>
+                <input type="text" id="instansi" name="instansi" placeholder="Instansi" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-edit"></i>
+                <textarea id="keperluan" name="keperluan" placeholder="Keperluan Anda" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn">Kirim</button>
+        </form>
     </div>
 
     <script>

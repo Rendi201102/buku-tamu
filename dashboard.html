@@ -6,32 +6,16 @@
     <title>Dashboard Admin</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; display: flex; }
-        .sidebar { width: 250px; background: #1F2A40; color: white; height: 100vh; padding: 20px; }
-        .sidebar h2 { text-align: center; }
-        .sidebar img { display: block; margin: 10px auto; width: 80px; }
-        .menu { list-style: none; padding: 10px 0; }
-        .menu li { padding: 10px; margin: 5px 0; cursor: pointer; display: flex; align-items: center; }
-        .menu li i { margin-right: 10px; }
-        .menu .active { background: #FFA500; border-radius: 5px; }
-        .content { flex: 1; padding: 20px; background: #F4F6F9; }
-        .header { display: flex; justify-content: space-between; align-items: center; background: #FFA500; padding: 15px; border-radius: 5px; }
-        .header button { background: #D9534F; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
-        .cards { display: flex; gap: 10px; margin-top: 20px; }
-        .card { background: white; padding: 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); flex: 1; }
-        .chart-container { width: 100%; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="sidebar">
-        <img src="tis.png" alt="Logo Perusahaan">
+        <img src="logo.png" alt="Logo Perusahaan">
         <h2>Admin Panel</h2>
         <ul class="menu">
-            <li id="menu-dashboard" class="active"><i class="fas fa-home"></i> Dashboard</li>
-            <li id="menu-daftar-tamu"><i class="fas fa-users"></i> Daftar Tamu</li>
-            <li id="menu-pengaturan"><i class="fas fa-cog"></i> Pengaturan</li>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="daftar_tamu.html"><i class="fas fa-users"></i> Daftar Tamu</a></li>
+            <li><a href="pengaturan.html"><i class="fas fa-cog"></i> Pengaturan</a></li>
         </ul>
     </div>
     <div class="content">
@@ -39,39 +23,34 @@
             <h2>Dashboard Admin</h2>
             <button>Log Out</button>
         </div>
-        
-        <div id="page-dashboard">
-            <div class="cards">
-                <div class="card">Total Tamu: 100</div>
-                <div class="card">Tamu Hari Ini: 10</div>
-            </div>
-            <div class="cards">
-                <div class="card chart-container">
-                    <canvas id="guestChart"></canvas>
-                </div>
-                <div class="card">
-                    <h3>Log Aktivitas</h3>
-                    <ul>
-                        <li>10:00 - Tamu John Doe check-in</li>
-                        <li>10:30 - Tamu Jane Smith check-in</li>
-                        <li>11:00 - Anomali terdeteksi!</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="cards">
+            <div class="card">Total Tamu: 100</div>
+            <div class="card">Tamu Hari Ini: 10</div>
         </div>
-
-        <div id="page-daftar-tamu" style="display: none;">
-            <h2>Daftar Tamu</h2>
-            <p>Ini halaman daftar tamu.</p>
-        </div>
-
-        <div id="page-pengaturan" style="display: none;">
-            <h2>Pengaturan</h2>
-            <p>Ini halaman pengaturan.</p>
+        <div class="cards">
+            <div class="card chart-container">
+                <canvas id="guestChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Log Aktivitas</h3>
+                <ul>
+                    <li>10:00 - Tamu John Doe check-in</li>
+                    <li>10:30 - Tamu Jane Smith check-in</li>
+                    <li>11:00 - Anomali terdeteksi!</li>
+                </ul>
+            </div>
         </div>
     </div>
-
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentPage = window.location.pathname.split("/").pop();
+            document.querySelectorAll(".menu a").forEach(item => {
+                if (item.getAttribute("href") === currentPage) {
+                    item.parentElement.classList.add("active");
+                }
+            });
+        });
+
         const ctx = document.getElementById('guestChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -86,22 +65,6 @@
                 }]
             },
             options: { responsive: true }
-        });
-
-        const pages = {
-            "menu-dashboard": "page-dashboard",
-            "menu-daftar-tamu": "page-daftar-tamu",
-            "menu-pengaturan": "page-pengaturan"
-        };
-
-        document.querySelectorAll(".menu li").forEach(menu => {
-            menu.addEventListener("click", function () {
-                document.querySelector(".menu .active")?.classList.remove("active");
-                this.classList.add("active");
-
-                Object.values(pages).forEach(page => document.getElementById(page).style.display = "none");
-                document.getElementById(pages[this.id]).style.display = "block";
-            });
         });
     </script>
 </body>

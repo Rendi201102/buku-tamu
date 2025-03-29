@@ -1,65 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Buku Tamu</title>
-  <link rel="stylesheet" href="form-styles.css?version=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu Digital</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Tambahkan Gambar -->
-    <div class="image-container">
-      <img src="tis.png" alt="Logo TIS">
+    <div class="container">
+        <div class="form-box">
+            <div class="header">
+                <h2>Buku Tamu Digital</h2>
+                <p>Silakan isi form berikut.</p>
+            </div>
+            <form id="bukuTamuForm">
+                <div class="input-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+                <div class="input-group">
+                    <label for="no-telp">Nomor Telepon</label>
+                    <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
+                </div>
+                <div class="input-group">
+                    <label for="instansi">Instansi</label>
+                    <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
+                </div>
+                <div class="input-group">
+                    <label for="keperluan">Keperluan</label>
+                    <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim</button>
+            </form>
+        </div>
     </div>
-    <header>
-      <h1>Buku Tamu Digital</h1>
-      <p>Selamat datang! Silakan isi form berikut.</p>
-    </header>
-    
-    <form id="bukuTamuForm">
-      <div class="form-group">
-        <label for="nama">Nama Lengkap</label>
-        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
-      </div>
-      <div class="form-group">
-        <label for="no-telp">Nomor Telepon</label>
-        <input type="tel" id="no-telp" name="no-telp" placeholder="Masukkan nomor telepon" required>
-      </div>
-      <div class="form-group">
-        <label for="instansi">Instansi</label>
-        <input type="text" id="instansi" name="instansi" placeholder="Masukkan nama instansi" required>
-      </div>
-      <div class="form-group">
-        <label for="keperluan">Keperluan</label>
-        <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan Anda" rows="3" required></textarea>
-      </div>
-      <a href="konfirmasi.html" class="btn-submit">Submit</a>
-    </form>
-  </div>
 
-  <script>
-    window.onload = function() {
-      document.getElementById("bukuTamuForm").addEventListener("submit", function(event){
-          event.preventDefault(); // Mencegah form dikirim secara default
+    <script>
+        document.getElementById("bukuTamuForm").addEventListener("submit", function(event){
+            event.preventDefault();
 
-          // Ambil data dari input
-          let nama = document.getElementById("nama").value;
-          let noTelp = document.getElementById("no-telp").value;
-          let instansi = document.getElementById("instansi").value;
-          let keperluan = document.getElementById("keperluan").value;
+            let nama = document.getElementById("nama").value;
+            let noTelp = document.getElementById("no-telp").value;
+            let instansi = document.getElementById("instansi").value;
+            let keperluan = document.getElementById("keperluan").value;
 
-          // Simpan data ke localStorage
-          localStorage.setItem("nama", nama);
-          localStorage.setItem("no-telp", noTelp);
-          localStorage.setItem("instansi", instansi);
-          localStorage.setItem("keperluan", keperluan);
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("no-telp", noTelp);
+            localStorage.setItem("instansi", instansi);
+            localStorage.setItem("keperluan", keperluan);
 
-          // Redirect ke halaman konfirmasi
-          window.location.href = "konfirmasi.html";
-      });
-    };
-  </script>
+            window.location.href = "konfirmasi.html";
+        });
+    </script>
 </body>
 </html>

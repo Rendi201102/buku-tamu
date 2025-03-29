@@ -1,61 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konfirmasi Buku Tamu</title>
-  <link rel="stylesheet" href="form-styles.css?version=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-    .confirmation-container {
-      text-align: center;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 90%;
-      max-width: 400px;
-    }
-    .confirmation-container img {
-      width: 100px;
-      margin-bottom: 10px;
-    }
-    .confirmation-message {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .back-button {
-      display: block;
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #1e3c72, #fbb03b); height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); width: 450px; text-align: center; }
+        .container img { width: 120px; margin-bottom: 20px; }
+        .message-box { background: #28A745; color: white; padding: 18px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn { width: 100%; background: linear-gradient(90deg, #FF9800, #FF5722); color: white; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; transition: 0.3s; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn:hover { background: linear-gradient(90deg, #FF5722, #FF9800); transform: scale(1.05); }
+    </style>
 </head>
 <body>
-
-  <div class="confirmation-container">
-    <img src="tis.png" alt="Logo TIS">
-    <div class="confirmation-message">
-      <p><strong>Data Anda telah berhasil dikirim.</strong> <span id="nama"></span></p>
-      <p><strong>Terimakasi Telah Mengunjungi</strong> <span id="noTelp"></span></p>
-      <p><strong>PT. Trans Indonesia Superkoridor</strong> <span id="instansi"></span></p>
+    <div class="container">
+        <img src="tis.png" alt="Logo Perusahaan">
+        <div class="message-box">
+            Data Anda telah berhasil dikirim.<br>
+            Terima kasih telah mengunjungi<br>
+            <strong>PT. Trans Indonesia Superkoridor</strong>
+        </div>
+        <button class="btn" onclick="window.location.href='form.html'">Kembali ke Form</button>
     </div>
-    <a href="index.html" class="back-button">Kembali ke Form</a>
-  </div>
 </body>
 </html>
